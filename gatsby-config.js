@@ -1,9 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Agent A`,
-    description: `Agent A is a brand innovation studio
-
-We merge curiosity, insight and imagination to help brands matter. `,
+    description: `Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. `,
     author: `@awkale`,
   },
   plugins: [
@@ -26,13 +24,13 @@ We merge curiosity, insight and imagination to help brands matter. `,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Agent A`,
+        short_name: `Agent A`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#d22630`,
+        theme_color: `#d22630`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-sass`,
