@@ -7,3 +7,8 @@
 @import "../styles/nav";
 @import "../styles/typist";
 
+body {
+  background: linear-gradient(45deg, $cool-gray-1c 1%, $cool-gray-6c 66%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
