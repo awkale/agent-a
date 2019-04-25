@@ -8,9 +8,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Header from './Header';
 import './layout.scss';
+
+const Container = styled.div`
+  max-width: 1140px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -24,7 +34,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <Container>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -37,7 +47,7 @@ const Layout = ({ children }) => (
           <main>{children}</main>
           <footer>© {new Date().getFullYear()}</footer>
         </div>
-      </>
+      </Container>
     )}
   />
 );
