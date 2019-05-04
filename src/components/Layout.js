@@ -14,9 +14,11 @@ import Header from './Header';
 import './layout.scss';
 
 const theme = {
+  red: '#d22630',
   coolGray1c: '#d9d9d6',
   coolGray6c: '#a7a8aa',
   coolGray11c: '#53565A',
+  gray900: '#212529',
 };
 
 const Container = styled.div`
