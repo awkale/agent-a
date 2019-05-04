@@ -10,7 +10,7 @@ const Navbar = styled.div`
   letter-spacing: 1px;
   font-size: 1rem;
   line-height: 1rem;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 `;
 
 const NavLinkWrapper = styled.ul`
