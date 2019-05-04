@@ -10,7 +10,6 @@ const ProcessGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 40px;
-  /* grid-template-rows: 1fr 1fr; */
 
   h2 {
     grid-row: 1 / 2;
@@ -18,11 +17,7 @@ const ProcessGrid = styled.div`
 
   div {
     font-size: 1.5rem;
-    /* color: #fff; */
   }
-  /* h2:nth-child(1) {
-    grid-column: 1 / 2;
-  } */
 `;
 
 const Process = ({ data }) => {
