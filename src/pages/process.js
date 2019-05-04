@@ -1,7 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+import PageTitle from '../components/styles/PageTitle';
+import PageSubTitle from '../components/styles/PageSubTitle';
+
+const ProcessGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  /* grid-template-rows: 1fr 1fr; */
+
+  h2 {
+    grid-row: 1 / 2;
+  }
+
+  div {
+    font-size: 1.5rem;
+    /* color: #fff; */
+  }
+  /* h2:nth-child(1) {
+    grid-column: 1 / 2;
+  } */
+`;
 
 const Process = ({ data }) => {
   const processes = data.allContentfulProcess.edges;
@@ -9,22 +31,26 @@ const Process = ({ data }) => {
   return (
     <Layout>
       <SEO title="Process" />
-      <h1>How We Do It</h1>
-      {processes.map(process => (
-        <div>
-          <h2>{process.node.processType}</h2>
-          {process.node.processTypeDescription.content.map(text => (
-            <p>{text.content[0].value}</p>
-          ))}
-        </div>
-      ))}
+      <PageTitle>How We Do It</PageTitle>
+      <ProcessGrid>
+        {processes.map(process => (
+          <>
+            <PageSubTitle>{process.node.processType}</PageSubTitle>
+            <div>
+              {process.node.processTypeDescription.content.map(text => (
+                <p>{text.content[0].value}</p>
+              ))}
+            </div>
+          </>
+        ))}
+      </ProcessGrid>
     </Layout>
   );
 };
 
 export const query = graphql`
   query ProcessQuery {
-    allContentfulProcess {
+    allContentfulProcess(sort: { fields: [order] }) {
       edges {
         node {
           processType
