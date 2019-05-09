@@ -7,8 +7,16 @@
 @import "../styles/nav";
 @import "../styles/typist";
 
-body {
-  background: linear-gradient(45deg, $cool-gray-1c 1%, $cool-gray-6c 66%);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+// body {
+//   background: linear-gradient(45deg, $cool-gray-1c 1%, $cool-gray-6c 66%);
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+// }
+
+body.how-we-do-it {
+  background-color: #212529;
+
+  h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  }
 }

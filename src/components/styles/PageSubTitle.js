@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 const PageSubTitle = styled.h2`
-  font-size: 4rem;
+  font-size: 1.5rem;
   line-height: 1;
-  color: ${props => props.theme.red};
+  color: #fff;
 `;
 
 export default PageSubTitle;

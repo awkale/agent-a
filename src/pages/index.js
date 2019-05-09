@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Typist from 'react-typist';
 import Layout from '../components/Layout';
