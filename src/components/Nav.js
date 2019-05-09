@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import logo from '../images/AgentA-red-transparent.png';
+import logo from '../images/AgentA-white.png';
 
 const Navbar = styled.div`
   display: flex;
@@ -27,10 +27,11 @@ const NavLink = styled.li`
     padding: 20px;
     transition: all 0.2s ease;
 
-    :hover {
+    :hover,
+    &.active {
       color: #fff;
       text-decoration: none;
-      background: ${props => props.theme.coolGray11c};
+      background: ${props => props.theme.coolGray6c};
     }
   }
 `;
@@ -53,13 +54,19 @@ const Nav = () => (
     </NavLogo>
     <NavLinkWrapper>
       <NavLink>
-        <Link to="/process">Process</Link>
+        <Link activeClassName="active" to="/what-we-do">
+          What We Do
+        </Link>
       </NavLink>
       <NavLink>
-        <Link to="/work">Work</Link>
+        <Link activeClassName="active" to="/work">
+          Work
+        </Link>
       </NavLink>
       <NavLink>
-        <Link to="/agents">The Agents</Link>
+        <Link activeClassName="active" to="/agents">
+          The Agents
+        </Link>
       </NavLink>
     </NavLinkWrapper>
   </Navbar>
