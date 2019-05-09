@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
+import Helmut from 'react-helmet';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageTitle from '../components/styles/PageTitle';
@@ -8,15 +9,14 @@ import PageSubTitle from '../components/styles/PageSubTitle';
 
 const ProcessGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 250px;
 
-  h2 {
-    grid-row: 1 / 2;
-  }
-
-  div {
-    font-size: 1.5rem;
+  p {
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 1.5;
   }
 `;
 
@@ -25,6 +25,7 @@ const Process = ({ data }) => {
 
   return (
     <Layout>
+      <Helmut bodyAttributes={{ class: 'how-we-do-it' }} />
       <SEO title="Process" />
       <PageTitle>How We Do It</PageTitle>
       <ProcessGrid>
