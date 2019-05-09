@@ -25,6 +25,7 @@ module.exports = {
     author: '@awkale',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-styled-components',
       options: {
