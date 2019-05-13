@@ -5,6 +5,7 @@ const PageTitle = styled.h1`
   margin-bottom: 3rem;
   line-height: 1;
   text-align: center;
+  color: #fff;
 `;
 
 export default PageTitle;
