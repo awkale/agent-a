@@ -14,13 +14,13 @@
 // }
 
 body.how-we-do-it {
-  background-color: #212529;
-
-  h1, h2, h3, h4, h5, h6 {
-  color: #fff;
-  }
+  background-color: $gray-900;
 
   h1 {
     margin: 20rem 0 30rem;
   }
+}
+
+body.work {
+background-color: $cool-gray-11c;
 }
