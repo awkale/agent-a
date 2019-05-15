@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const Box = styled.div`
+  position: relative;
   background: linear-gradient(
     to top,
     ${props => props.theme.gray900} 50%,
