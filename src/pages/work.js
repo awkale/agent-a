@@ -10,6 +10,7 @@ import MetaData from '../components/styles/MetaData';
 import BoxWrapper from '../components/styles/BoxWrapper';
 import Box from '../components/styles/Box';
 import ImageGrid from '../components/styles/ImageGrid';
+import CaseNumber from '../components/styles/CaseNumber';
 
 const Work = ({ data }) => (
   <Layout>
@@ -17,12 +18,13 @@ const Work = ({ data }) => (
     <SEO title="Work" />
     <PageTitle>Missions Accomplished</PageTitle>
     <ImageGrid>
-      {data.allFile.edges.map((path, index) => (
-        <Img fluid={path.node.childImageSharp.fluid} />
+      {data.allFile.edges.map(path => (
+        <Img key={path.node.id} fluid={path.node.childImageSharp.fluid} />
       ))}
     </ImageGrid>
     <BoxWrapper>
       <Box>
+        <CaseNumber>Case Number: 34230-33</CaseNumber>
         <MetaData>New Products</MetaData>
         <PageSubTitle>Coty</PageSubTitle>
         <p>
@@ -32,6 +34,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 502-43</CaseNumber>
         <MetaData>New Products</MetaData>
         <PageSubTitle>Diageo</PageSubTitle>
         <p>
@@ -43,6 +46,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 354-65</CaseNumber>
         <MetaData>Insights & Strategy</MetaData>
         <PageSubTitle>Buchanan’s</PageSubTitle>
         <p>
@@ -51,6 +55,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 928-73</CaseNumber>
         <MetaData>New Products</MetaData>
         <PageSubTitle>Pepsico</PageSubTitle>
         <p>
@@ -61,6 +66,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 124-83</CaseNumber>
         <MetaData>Experiential</MetaData>
         <PageSubTitle>Pepisco</PageSubTitle>
         <p>
@@ -70,6 +76,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 658-443</CaseNumber>
         <MetaData>Communications</MetaData>
         <PageSubTitle>Etsy</PageSubTitle>
         <p>
@@ -79,6 +86,7 @@ const Work = ({ data }) => (
         </p>
       </Box>
       <Box>
+        <CaseNumber>Case Number: 5821-843</CaseNumber>
         <MetaData>Insights & Strategy</MetaData>
         <PageSubTitle>Ketel One</PageSubTitle>
         <p>
