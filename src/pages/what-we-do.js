@@ -31,12 +31,10 @@ const Process = ({ data }) => {
       <ProcessGrid>
         {processes.map(process => (
           <>
-            <PageSubTitle>{process.node.processType}</PageSubTitle>
-            <div>
-              {process.node.processTypeDescription.content.map(text => (
-                <p>{text.content[0].value}</p>
-              ))}
-            </div>
+            <PageSubTitle key={process.node.id}>{process.node.processType}</PageSubTitle>
+            <p key={process.node.processDescription.id}>
+              {process.node.processDescription.processDescription}
+            </p>
           </>
         ))}
       </ProcessGrid>
@@ -49,15 +47,11 @@ export const query = graphql`
     allContentfulProcess(sort: { fields: [order] }) {
       edges {
         node {
+          id
           processType
-          processTypeDescription {
+          processDescription {
             id
-            content {
-              nodeType
-              content {
-                value
-              }
-            }
+            processDescription
           }
         }
       }
