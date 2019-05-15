@@ -18,8 +18,8 @@ const Work = ({ data }) => (
     <SEO title="Work" />
     <PageTitle>Missions Accomplished</PageTitle>
     <ImageGrid>
-      {data.allFile.edges.map(path => (
-        <Img key={path.node.id} fluid={path.node.childImageSharp.fluid} />
+      {data.allFile.edges.map(image => (
+        <Img key={image.node.id} fluid={image.node.childImageSharp.fluid} />
       ))}
     </ImageGrid>
     <BoxWrapper>
