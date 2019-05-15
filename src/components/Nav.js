@@ -6,10 +6,6 @@ import logo from '../images/AgentA-white.png';
 const Navbar = styled.div`
   display: flex;
   justify-content: space-between;
-  font-family: noway_roundregular;
-  letter-spacing: 1px;
-  font-size: 1rem;
-  line-height: 1rem;
   margin-bottom: 5rem;
 `;
 
@@ -21,6 +17,11 @@ const NavLinkWrapper = styled.ul`
 `;
 
 const NavLink = styled.li`
+  font-family: noway_roundregular;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  line-height: 1rem;
+
   a {
     color: #fff;
     text-transform: uppercase;
