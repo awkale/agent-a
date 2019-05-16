@@ -19,6 +19,11 @@ const theme = {
   coolGray6c: '#a7a8aa',
   coolGray11c: '#53565A',
   gray900: '#212529',
+  xs: '0',
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
 };
 
 const Container = styled.div`
