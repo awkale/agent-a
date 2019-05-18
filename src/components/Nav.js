@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import logo from '../images/AgentA-white.png';
@@ -17,6 +17,7 @@ const ToggleButton = styled.div`
   display: none;
   align-self: flex-end;
   position: absolute;
+  top: 10px;
 
   @media (max-width: ${props => props.theme.sm}) {
     display: block;
@@ -43,6 +44,7 @@ const NavLinkWrapper = styled.ul`
   @media (max-width: ${props => props.theme.sm}) {
     flex-direction: column;
     padding: 10px 0;
+    display: ${props => (props.isNavShown ? 'flex' : 'none')};
   }
 `;
 
@@ -66,7 +68,7 @@ const NavLink = styled.li`
     &.active {
       color: #fff;
       text-decoration: none;
-      background: ${props => props.theme.coolGray6c};
+      background: ${props => props.theme.coolGray11c};
     }
   }
 `;
@@ -80,34 +82,52 @@ const NavLogo = styled.div`
   }
 `;
 
-const Nav = () => (
-  <Navbar>
-    <NavLogo>
-      <Link to="/">
-        <img src={logo} alt="Agent A logo" />
-      </Link>
-    </NavLogo>
-    <ToggleButton>
-      <ToggleIcon />
-    </ToggleButton>
-    <NavLinkWrapper>
-      <NavLink>
-        <Link activeClassName="active" to="/what-we-do">
-          What We Do
-        </Link>
-      </NavLink>
-      <NavLink>
-        <Link activeClassName="active" to="/work">
-          Work
-        </Link>
-      </NavLink>
-      <NavLink>
-        <Link activeClassName="active" to="/agents">
-          The Agents
-        </Link>
-      </NavLink>
-    </NavLinkWrapper>
-  </Navbar>
-);
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.toggleNav = this.toggleNav.bind(this);
+    this.state = {
+      hamburgerIsOpen: false,
+    };
+  }
+
+  toggleNav() {
+    this.setState(state => ({
+      hamburgerIsOpen: !state.hamburgerIsOpen,
+    }));
+  }
+
+  render() {
+    return (
+      <Navbar>
+        <NavLogo>
+          <Link to="/">
+            <img src={logo} alt="Agent A logo" />
+          </Link>
+        </NavLogo>
+        <ToggleButton onClick={this.toggleNav}>
+          <ToggleIcon />
+        </ToggleButton>
+        <NavLinkWrapper isNavShown={this.state.hamburgerIsOpen}>
+          <NavLink>
+            <Link activeClassName="active" to="/what-we-do">
+              What We Do
+            </Link>
+          </NavLink>
+          <NavLink>
+            <Link activeClassName="active" to="/work">
+              Work
+            </Link>
+          </NavLink>
+          <NavLink>
+            <Link activeClassName="active" to="/agents">
+              The Agents
+            </Link>
+          </NavLink>
+        </NavLinkWrapper>
+      </Navbar>
+    );
+  }
+}
 
 export default Nav;
