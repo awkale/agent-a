@@ -37,6 +37,10 @@ const Container = styled.div`
   main {
     min-height: 600px;
   }
+
+  footer {
+    margin: 20px 0;
+  }
 `;
 
 const Layout = ({ children }) => (
