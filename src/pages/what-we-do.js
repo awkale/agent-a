@@ -9,9 +9,13 @@ import PageSubTitle from '../components/styles/PageSubTitle';
 
 const ProcessGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-column-gap: 50px;
-  grid-row-gap: 250px;
+  grid-row-gap: 50px;
+
+  @media (min-width: ${props => props.theme.md}) {
+    grid-row-gap: 250px;
+    grid-template-columns: 1fr 1fr;
+  }
 
   p {
     color: #fff;
@@ -31,7 +35,9 @@ const Process = ({ data }) => {
       <ProcessGrid>
         {processes.map(process => (
           <>
-            <PageSubTitle key={process.node.id}>{process.node.processType}</PageSubTitle>
+            <PageSubTitle key={process.node.id}>
+              {process.node.processType}
+            </PageSubTitle>
             <p key={process.node.processDescription.id}>
               {process.node.processDescription.processDescription}
             </p>

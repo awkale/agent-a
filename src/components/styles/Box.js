@@ -14,7 +14,9 @@ const Box = styled.div`
 
   p {
     color: #fff;
-    visibility: hidden;
+    @media (min-width: ${props => props.theme.md}) {
+      visibility: hidden;
+    }
   }
 
   :hover {

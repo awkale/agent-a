@@ -11,6 +11,10 @@ const CaseNumber = styled.h4`
   top: 80%;
   /* transform: rotate(-25deg); */
   opacity: 0.25;
+
+  @media (max-width: ${props => props.theme.sm}) {
+    display: none;
+  }
 `;
 
 export default CaseNumber;

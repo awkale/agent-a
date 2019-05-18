@@ -18,6 +18,11 @@ body.how-we-do-it {
 
   h1 {
     margin: 20rem 0 30rem;
+
+    @media (max-width: 576px) {
+
+      margin: 10rem 0 10rem;
+    }
   }
 }
 
