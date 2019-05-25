@@ -11,6 +11,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 
 import Header from './Header';
+import Footer from './Footer';
 import './layout.scss';
 
 const theme = {
@@ -59,7 +60,7 @@ const Layout = ({ children }) => (
         <Container>
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
-          <footer>{`© Agent A ${new Date().getFullYear()}`}</footer>
+          <Footer />
         </Container>
       </ThemeProvider>
     )}
