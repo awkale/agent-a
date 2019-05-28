@@ -1,14 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MovingDot = styled.div`
-  position: absolute;
+const MovingDot = styled.object`
+  top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  top: 10%;
+  position: absolute;
   z-index: -1;
 
   @media (max-width: ${props => props.theme.md}) {
-    top: 20%;
+    top: 10%;
+  }
+
+  object {
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 `;
 
