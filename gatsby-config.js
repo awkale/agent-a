@@ -16,7 +16,7 @@ const { spaceId, accessToken } = contentfulConfig;
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.',
+    'Contentful spaceId and the delivery token need to be provided.'
   );
 }
 
@@ -34,7 +34,7 @@ module.exports = {
       options: {
         trackingId: 'UA-171213-17',
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
+        // head: true,
         // Setting this parameter is optional
         // anonymize: true,
         // Setting this parameter is also optional
