@@ -49,7 +49,7 @@ module.exports = {
         // variationId: 'YOUR_GOOGLE_OPTIMIZE_VARIATION_ID',
         // Any additional create only fields (optional)
         // siteSpeedSampleRate: 10,
-        cookieDomain: 'agent-a-ny.com',
+        // cookieDomain: 'agent-a-ny.com',
       },
     },
     {
