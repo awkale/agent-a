@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
@@ -34,27 +35,27 @@ function Footer() {
     <footer>
       <FooterNav>
         <FooterNavLink>
-          <a href="mailto:alex@agent-a-ny.com">
+          <OutboundLink href="mailto:alex@agent-a-ny.com">
             <FontAwesomeIcon size="lg" icon={faAt} />
-          </a>
+          </OutboundLink>
         </FooterNavLink>
         <FooterNavLink>
-          <a
+          <OutboundLink
             href="https://www.instagram.com/agent_a_ny/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon size="lg" icon={faInstagram} />
-          </a>
+          </OutboundLink>
         </FooterNavLink>
         <FooterNavLink>
-          <a
+          <OutboundLink
             href="https://www.linkedin.com/in/alejandro-rodriguez-b406ab4/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon size="lg" icon={faLinkedin} />
-          </a>
+          </OutboundLink>
         </FooterNavLink>
       </FooterNav>
       <Copyright>{`© Agent A ${new Date().getFullYear()}`}</Copyright>
