@@ -30,7 +30,7 @@ const Process = ({ data }) => {
 
   return (
     <Layout>
-      <Helmut bodyAttributes={{ class: 'how-we-do-it' }} />
+      <Helmut bodyAttributes={{ class: 'what-we-do' }} />
       <SEO title="Process" />
       <PageTitle>How We Do It</PageTitle>
       <AnimatedGraph />
