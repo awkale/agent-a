@@ -32,7 +32,7 @@ const ToggleIcon = styled.span`
   content: '';
   background: no-repeat center center;
   background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(250, 250, 250, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 `;
 
 const NavLinkWrapper = styled.ul`
@@ -55,7 +55,8 @@ const NavLink = styled.li`
   line-height: 1rem;
 
   @media (max-width: ${props => props.theme.sm}) {
-    padding: 10px 0;
+    padding: 0;
+    width: 100%;
   }
 
   a {
@@ -63,6 +64,11 @@ const NavLink = styled.li`
     text-transform: uppercase;
     padding: 20px;
     transition: all 0.2s ease;
+
+    @media (max-width: ${props => props.theme.sm}) {
+      padding: 10px 10px 7px;
+      display: block;
+    }
 
     :hover,
     &.active {
