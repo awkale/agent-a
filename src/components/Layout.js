@@ -12,6 +12,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import Header from './Header';
 import Footer from './Footer';
+import AnimatedGraph from './AnimatedGraph';
 import './layout.scss';
 
 const theme = {
@@ -35,6 +36,12 @@ const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
 
+  header,
+  main,
+  footer {
+    position: relative;
+  }
+
   main {
     min-height: 600px;
   }
@@ -44,7 +51,7 @@ const Container = styled.div`
   }
 `;
 
-const Layout = ({ children }) => (
+const Layout = ({ children, showGraph }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -58,6 +65,7 @@ const Layout = ({ children }) => (
     render={data => (
       <ThemeProvider theme={theme}>
         <Container>
+          {showGraph && <AnimatedGraph />}
           <Header siteTitle={data.site.siteMetadata.title} />
           <main>{children}</main>
           <Footer />
