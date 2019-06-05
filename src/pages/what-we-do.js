@@ -6,7 +6,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageTitle from '../components/styles/PageTitle';
 import PageSubTitle from '../components/styles/PageSubTitle';
-import AnimatedGraph from '../components/AnimatedGraph';
 
 const ProcessGrid = styled.div`
   display: grid;
@@ -29,11 +28,10 @@ const Process = ({ data }) => {
   const processes = data.allContentfulProcess.edges;
 
   return (
-    <Layout>
+    <Layout showGraph>
       <Helmut bodyAttributes={{ class: 'what-we-do' }} />
       <SEO title="Process" />
       <PageTitle>How We Do It</PageTitle>
-      <AnimatedGraph />
       <ProcessGrid>
         {processes.map(process => (
           <>
