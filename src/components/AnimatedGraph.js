@@ -1,83 +1,125 @@
 import React from 'react';
 import styled from 'styled-components';
+import Particles from 'react-particles-js';
 
-const MovingDot = styled.object`
+const MovingDot = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   position: absolute;
-  z-index: -1;
-
-  @media (max-width: ${props => props.theme.md}) {
-    top: 10%;
-  }
-
-  object {
-  }
-
-  svg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
 `;
 
 function AnimatedGraph() {
   return (
     <MovingDot>
-      <svg viewBox="0 0 1440 1024" version="1.1">
-        <g
-          id="Page-1"
-          stroke="none"
-          strokeWidth="1"
-          fill="none"
-          fillRule="evenodd"
-        >
-          <g id="Desktop-HD">
-            <path
-              d="M191.996094,752 C365.677188,493.449557 1118.44847,39.7388503 1383.99609,687.268912"
-              id="Path-2"
-              stroke="#333333"
-              strokeWidth="4"
-            />
-            <path
-              d="M1282,859.353626 C1101.84847,620.282165 495.569682,15.8246026 239,510.640376"
-              id="Path"
-              stroke="#333333"
-              strokeWidth="4"
-            />
-            <circle id="Oval" fill="#D22630" cx="240.5" cy="511.5" r="7.5" />
-            <circle
-              id="Oval-Copy"
-              fill="#D22630"
-              cx="191.5"
-              cy="752.5"
-              r="7.5"
-            />
-            <circle
-              id="Oval-Copy-2"
-              fill="#D22630"
-              cx="1383.5"
-              cy="688.5"
-              r="7.5"
-            />
-            <circle id="Oval" fill="#D22630" cx="1282.5" cy="859.5" r="7.5" />
-          </g>
-        </g>
-        <circle cx="" cy="" r="7" fill="#d22630">
-          <animateMotion dur="10" repeatCount="indefinite">
-            <mpath xlinkHref="#Path" />
-          </animateMotion>
-        </circle>
-        <circle cx="" cy="" r="7" fill="#d22630">
-          <animateMotion dur="14s" repeatCount="indefinite">
-            <mpath xlinkHref="#Path-2" />
-          </animateMotion>
-        </circle>
-      </svg>
+      <Particles
+        params={{
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: '#d22630',
+            },
+            shape: {
+              type: 'circle',
+              stroke: {
+                width: 0,
+                color: '#000000',
+              },
+              polygon: {
+                nb_sides: 5,
+              },
+            },
+            opacity: {
+              value: 0.5,
+              random: false,
+              anim: {
+                enable: false,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
+              },
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false,
+              },
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#ffffff',
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 6,
+              direction: 'none',
+              random: false,
+              straight: false,
+              out_mode: 'out',
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200,
+              },
+            },
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'repulse',
+              },
+              onclick: {
+                enable: true,
+                mode: 'push',
+              },
+              resize: true,
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1,
+                },
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4,
+              },
+              push: {
+                particles_nb: 4,
+              },
+              remove: {
+                particles_nb: 2,
+              },
+            },
+          },
+          retina_detect: true,
+        }}
+      />
     </MovingDot>
   );
 }
