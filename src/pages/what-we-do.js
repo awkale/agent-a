@@ -30,7 +30,11 @@ const Process = ({ data }) => {
   return (
     <Layout showGraph>
       <Helmut bodyAttributes={{ class: 'what-we-do' }} />
-      <SEO title="Process" />
+      <SEO
+        title="What We Do"
+        description={data.site.siteMetadata.description}
+        keywords={data.site.siteMetadata.keywords}
+      />
       <PageTitle>How We Do It</PageTitle>
       <ProcessGrid>
         {processes.map(process => (
@@ -50,6 +54,13 @@ const Process = ({ data }) => {
 
 export const query = graphql`
   query ProcessQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
     allContentfulProcess(sort: { fields: [order] }) {
       edges {
         node {

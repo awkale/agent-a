@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 
 const FooterNav = styled.ul`
@@ -55,6 +59,15 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon size="lg" icon={faLinkedin} />
+          </OutboundLink>
+        </FooterNavLink>
+        <FooterNavLink>
+          <OutboundLink
+            href="https://twitter.com/agentabranding"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon size="lg" icon={faTwitter} />
           </OutboundLink>
         </FooterNavLink>
       </FooterNav>
