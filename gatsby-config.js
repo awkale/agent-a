@@ -16,7 +16,7 @@ const { spaceId, accessToken } = contentfulConfig;
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.'
+    'Contentful spaceId and the delivery token need to be provided.',
   );
 }
 
@@ -35,6 +35,7 @@ module.exports = {
       'consumer insights',
       'strategy',
     ],
+    siteUrl: 'https://www.agent-a-ny.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
