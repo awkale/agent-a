@@ -32,13 +32,22 @@ const AgentBox = styled.div`
 
 const Agents = ({ data }) => (
   <Layout>
-    <SEO title="Agents" />
+    <SEO
+      title="Agents"
+      description={data.site.siteMetadata.description}
+      keywords={data.site.siteMetadata.keywords}
+    />
     <PageTitle>Agents</PageTitle>
     <BoxWrapper>
       {data.allContentfulAgents.edges.map(agent => (
         <AgentBox key={agent.node.id}>
           <Img fluid={agent.node.headshot.fluid} />
-          <PageSubTitle>{`${agent.node.firstName} ${agent.node.lastName}`}</PageSubTitle>
+          <PageSubTitle>
+{`${agent.node.firstName} ${
+            agent.node.lastName
+          }`}
+
+          </PageSubTitle>
           <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
         </AgentBox>
       ))}
@@ -48,6 +57,13 @@ const Agents = ({ data }) => (
 
 export const query = graphql`
   query AgentPhotosQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
     allContentfulAgents(sort: { fields: [order] }) {
       edges {
         node {

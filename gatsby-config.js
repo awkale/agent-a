@@ -16,7 +16,7 @@ const { spaceId, accessToken } = contentfulConfig;
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.',
+    'Contentful spaceId and the delivery token need to be provided.'
   );
 }
 
@@ -26,6 +26,15 @@ module.exports = {
     description:
       'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
     author: '@agentabranding',
+    keywords: [
+      'Agent A',
+      'brand innovation',
+      'branding',
+      'insights',
+      'innovation',
+      'consumer insights',
+      'strategy',
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',

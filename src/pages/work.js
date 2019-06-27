@@ -16,7 +16,11 @@ import CaseNumber from '../components/styles/CaseNumber';
 const Work = ({ data }) => (
   <Layout>
     <Helmut bodyAttributes={{ class: 'work' }} />
-    <SEO title="Work" />
+    <SEO
+      title="Work"
+      description={data.site.siteMetadata.description}
+      keywords={data.site.siteMetadata.keywords}
+    />
     <PageTitle>Missions Accomplished</PageTitle>
     <ImageGrid>
       {data.allFile.edges.map(image => (
@@ -38,6 +42,13 @@ const Work = ({ data }) => (
 
 export const query = graphql`
   query WorkQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        keywords
+      }
+    }
     allContentfulWork {
       edges {
         node {
