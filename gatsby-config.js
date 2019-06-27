@@ -25,7 +25,7 @@ module.exports = {
     title: 'Agent A',
     description:
       'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
-    author: '@awkale',
+    author: '@agentabranding',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
