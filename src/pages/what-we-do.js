@@ -35,7 +35,10 @@ const Process = ({ data }) => {
         description={data.site.siteMetadata.description}
         keywords={data.site.siteMetadata.keywords}
       />
-      <PageTitle>How We Do It</PageTitle>
+      <PageTitle>
+        We widen perspectives in order to develop brand strategies and new
+        product ideas
+      </PageTitle>
       <ProcessGrid>
         {processes.map(process => (
           <>
