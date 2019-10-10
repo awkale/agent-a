@@ -22,11 +22,6 @@ const Work = ({ data }) => (
       keywords={data.site.siteMetadata.keywords}
     />
     <PageTitle>Missions Accomplished</PageTitle>
-    <ImageGrid>
-      {data.allFile.edges.map(image => (
-        <Img key={image.node.id} fluid={image.node.childImageSharp.fluid} />
-      ))}
-    </ImageGrid>
     <BoxWrapper>
       {data.allContentfulWork.edges.map(work => (
         <Box>
@@ -37,6 +32,11 @@ const Work = ({ data }) => (
         </Box>
       ))}
     </BoxWrapper>
+    <ImageGrid>
+      {data.allFile.edges.map(image => (
+        <Img key={image.node.id} fluid={image.node.childImageSharp.fluid} />
+      ))}
+    </ImageGrid>
   </Layout>
 );
 
