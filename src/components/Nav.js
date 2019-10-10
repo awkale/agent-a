@@ -40,6 +40,7 @@ const NavLinkWrapper = styled.ul`
   display: flex;
   align-items: center;
   margin-bottom: 0;
+  padding: 0;
 
   @media (max-width: ${props => props.theme.sm}) {
     flex-direction: column;
@@ -62,8 +63,15 @@ const NavLink = styled.li`
   a {
     color: #fff;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 2px 15px;
+    margin-left: 30px;
     transition: all 0.2s ease;
+    background: linear-gradient(
+      180deg,
+      transparent 50%,
+      ${props => props.theme.coolGray11c} 0
+    );
+    background-size: 0 100%;
 
     @media (max-width: ${props => props.theme.sm}) {
       padding: 10px 10px 7px;
@@ -74,7 +82,7 @@ const NavLink = styled.li`
     &.active {
       color: #fff;
       text-decoration: none;
-      background: ${props => props.theme.coolGray11c};
+      background-size: 100% 100%;
     }
   }
 `;
