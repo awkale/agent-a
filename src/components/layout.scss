@@ -13,6 +13,10 @@
 //   background-attachment: fixed;
 // }
 
+html, body {
+  height: 100%;
+}
+
 body.what-we-do {
   background-color: $gray-900;
 
