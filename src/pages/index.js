@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmut from 'react-helmet';
 import Typist from 'react-typist';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
@@ -7,6 +8,7 @@ import SEO from '../components/Seo';
 function IndexPage({ data }) {
   return (
     <Layout>
+      <Helmut bodyAttributes={{ class: 'home' }} />
       <SEO
         title={data.site.siteMetadata.title}
         description={data.site.siteMetadata.description}

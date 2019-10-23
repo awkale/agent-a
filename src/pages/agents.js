@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Helmut from 'react-helmet';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/Layout';
@@ -9,29 +10,25 @@ import PageSubTitle from '../components/styles/PageSubTitle';
 import BoxWrapper from '../components/styles/BoxWrapper';
 
 const AgentBox = styled.div`
-  background-color: ${props => props.theme.coolGray11c};
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  h2 {
-    position: absolute;
-    left: 30px;
-    top: 250px;
-    color: ${props => props.theme.red};
-    background: #fff;
-    padding: 5px 5px 2px;
-  }
-
-  p {
-    color: #fff;
-    padding: 15px;
-  }
   .gatsby-image-wrapper {
-    margin-bottom: 15px;
+    margin-bottom: 45px;
+    border-bottom: 10px solid ${props => props.theme.red};
+  }
+`;
+
+const AgentText = styled.div`
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
 `;
 
 const Agents = ({ data }) => (
   <Layout>
+    <Helmut bodyAttributes={{ class: 'agents' }} />
     <SEO
       title="Agents"
       description={data.site.siteMetadata.description}
@@ -42,13 +39,12 @@ const Agents = ({ data }) => (
       {data.allContentfulAgents.edges.map(agent => (
         <AgentBox key={agent.node.id}>
           <Img fluid={agent.node.headshot.fluid} />
-          <PageSubTitle>
-{`${agent.node.firstName} ${
-            agent.node.lastName
-          }`}
-
-          </PageSubTitle>
-          <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
+          <AgentText>
+            <PageSubTitle>
+              {`${agent.node.firstName} ${agent.node.lastName}`}
+            </PageSubTitle>
+            <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
+          </AgentText>
         </AgentBox>
       ))}
     </BoxWrapper>

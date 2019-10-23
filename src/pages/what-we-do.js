@@ -18,7 +18,6 @@ const ProcessGrid = styled.div`
   }
 
   p {
-    color: #fff;
     font-size: 1.7rem;
     line-height: 1.5;
   }
