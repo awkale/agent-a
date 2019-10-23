@@ -13,10 +13,8 @@ const Box = styled.div`
   transition: all 0.2s ease;
 
   p {
-    color: #fff;
-    @media (min-width: ${props => props.theme.md}) {
-      visibility: hidden;
-    }
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
 
   :hover {

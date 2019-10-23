@@ -11,7 +11,6 @@ import MetaData from '../components/styles/MetaData';
 import BoxWrapper from '../components/styles/BoxWrapper';
 import Box from '../components/styles/Box';
 import ImageGrid from '../components/styles/ImageGrid';
-import CaseNumber from '../components/styles/CaseNumber';
 
 const Work = ({ data }) => (
   <Layout>
@@ -25,7 +24,6 @@ const Work = ({ data }) => (
     <BoxWrapper>
       {data.allContentfulWork.edges.map(work => (
         <Box>
-          <CaseNumber>{`Case Number: ${work.node.caseNumber}`}</CaseNumber>
           <MetaData>{work.node.category.category}</MetaData>
           <PageSubTitle>{work.node.clientName}</PageSubTitle>
           <p>{work.node.description.description}</p>
@@ -59,7 +57,6 @@ export const query = graphql`
           category {
             category
           }
-          caseNumber
         }
       }
     }

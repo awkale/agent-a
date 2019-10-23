@@ -17,9 +17,11 @@ html, body {
   height: 100%;
 }
 
-body.what-we-do {
-  background-color: $gray-900;
+body.home {
+  background-color: $red;
+}
 
+body.what-we-do {
   h1 {
     margin: 15rem 0 25rem;
 
@@ -30,6 +32,6 @@ body.what-we-do {
   }
 }
 
-body.work {
-background-color: $cool-gray-6c;
+p::selection {
+  background: $red;
 }
