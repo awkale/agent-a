@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import PageTitle from '../components/styles/PageTitle';
 import PageSubTitle from '../components/styles/PageSubTitle';
+import PageTitleDivider from '../components/styles/PageTitleDivider';
 import MetaData from '../components/styles/MetaData';
 import BoxWrapper from '../components/styles/BoxWrapper';
 import Box from '../components/styles/Box';
@@ -30,6 +31,7 @@ const Work = ({ data }) => (
         </Box>
       ))}
     </BoxWrapper>
+    <PageTitleDivider>Brands we've helped</PageTitleDivider>
     <ImageGrid>
       {data.allFile.edges.map(image => (
         <Img key={image.node.id} fluid={image.node.childImageSharp.fluid} />
