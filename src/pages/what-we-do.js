@@ -34,10 +34,7 @@ const Process = ({ data }) => {
         description={data.site.siteMetadata.description}
         keywords={data.site.siteMetadata.keywords}
       />
-      <PageTitle>
-        We widen perspectives in order to develop brand strategies and new
-        product ideas
-      </PageTitle>
+      <PageTitle>Global research. Strategy. Innovation. Creative.</PageTitle>
       <ProcessGrid>
         {processes.map(process => (
           <>
