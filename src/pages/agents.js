@@ -41,8 +41,10 @@ const Agents = ({ data }) => (
           <Img fluid={agent.node.headshot.fluid} />
           <AgentText>
             <PageSubTitle>
-              {`${agent.node.firstName} ${agent.node.lastName}`}
+              {`${agent.node.firstName} ${agent.node.lastName}`}<br />
+              <small>{agent.node.title}</small>
             </PageSubTitle>
+
             <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
           </AgentText>
         </AgentBox>
@@ -69,6 +71,7 @@ export const query = graphql`
           childContentfulAgentsBioTextNode {
             bio
           }
+          title
           headshot {
             fluid {
               ...GatsbyContentfulFluid
