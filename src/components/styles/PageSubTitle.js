@@ -14,6 +14,11 @@ const PageSubTitle = styled.h2`
     margin-top: 20px;
     background-color: ${props => props.theme.red};
   }
+
+  small {
+    font-size: 1rem;
+    color: ${props => props.theme.red};
+  }
 `;
 
 export default PageSubTitle;
