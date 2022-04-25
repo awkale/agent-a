@@ -13,7 +13,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import Header from './Header';
 import Footer from './Footer';
 import AnimatedGraph from './AnimatedGraph';
-import './layout.scss';
 
 const theme = {
   red: '#d22630',
