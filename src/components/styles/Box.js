@@ -4,8 +4,8 @@ const Box = styled.div`
   position: relative;
   background: linear-gradient(
     to top,
-    ${props => props.theme.gray900} 50%,
-    ${props => props.theme.red} 50%
+    #212529 50%,
+    #d22630 50%
   );
   background-size: 100% 200%;
   background-position: bottom left;

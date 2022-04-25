@@ -8,7 +8,7 @@ const ImageGrid = styled.div`
   margin-top: 4rem;
   margin-bottom: 8rem;
   grid-template-columns: 1fr 1fr;
-  @media (min-width: ${props => props.theme.md}) {
+  @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 `;

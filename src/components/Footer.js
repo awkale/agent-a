@@ -24,13 +24,13 @@ const FooterNavLink = styled.li`
     color: #fff;
 
     &:hover {
-      color: ${props => props.theme.coolGray11c};
+      color: #53565A;
     }
   }
 `;
 
 const Copyright = styled.div`
-  color: ${props => props.theme.coolGray11c};
+  color: #53565A;
   text-align: right;
 `;
 

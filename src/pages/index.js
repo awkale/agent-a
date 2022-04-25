@@ -4,6 +4,7 @@ import Helmut from 'react-helmet';
 import Typist from 'react-typist';
 import Layout from '../components/Layout';
 import SEO from '../components/Seo';
+import "../styles/typist.css"
 
 function IndexPage({ data }) {
   return (

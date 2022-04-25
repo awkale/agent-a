@@ -5,7 +5,7 @@ const MetaData = styled.h3`
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 20px;
-  color: ${props => props.theme.red};
+  color: #d22630;
 `;
 
 export default MetaData;

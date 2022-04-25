@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
-import React from 'react';
-import Helmut from 'react-helmet';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
-import PageTitle from '../components/styles/PageTitle';
-import PageSubTitle from '../components/styles/PageSubTitle';
-import PageTitleDivider from '../components/styles/PageTitleDivider';
-import MetaData from '../components/styles/MetaData';
-import BoxWrapper from '../components/styles/BoxWrapper';
-import Box from '../components/styles/Box';
-import ImageGrid from '../components/styles/ImageGrid';
+import React from 'react'
+import Helmut from 'react-helmet'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import PageTitle from '../components/styles/PageTitle'
+import PageSubTitle from '../components/styles/PageSubTitle'
+import PageTitleDivider from '../components/styles/PageTitleDivider'
+import MetaData from '../components/styles/MetaData'
+import BoxWrapper from '../components/styles/BoxWrapper'
+import Box from '../components/styles/Box'
+import ImageGrid from '../components/styles/ImageGrid'
 
 const Work = ({ data }) => (
   <Layout>
@@ -34,11 +34,11 @@ const Work = ({ data }) => (
     <PageTitleDivider>Brands we've helped</PageTitleDivider>
     <ImageGrid>
       {data.allFile.edges.map(image => (
-        <Img key={image.node.id} fluid={image.node.childImageSharp.fluid} />
+        <GatsbyImage key={image.node.id} image={image.node.childImageSharp.gatsbyImageData} />
       ))}
     </ImageGrid>
   </Layout>
-);
+)
 
 export const query = graphql`
   query WorkQuery {
@@ -70,14 +70,12 @@ export const query = graphql`
           name
           relativePath
           childImageSharp {
-            fluid(maxWidth: 200) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }
     }
   }
-`;
+`
 
-export default Work;
+export default Work

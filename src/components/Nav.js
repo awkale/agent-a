@@ -7,7 +7,7 @@ const Navbar = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 5rem;
-  @media (max-width: ${props => props.theme.sm}) {
+  @media (max-width: 576px) {
     flex-direction: column;
   }
 `;
@@ -19,7 +19,7 @@ const ToggleButton = styled.div`
   position: absolute;
   top: 10px;
 
-  @media (max-width: ${props => props.theme.sm}) {
+  @media (max-width: 576px) {
     display: block;
   }
 `;
@@ -42,7 +42,7 @@ const NavLinkWrapper = styled.ul`
   margin-bottom: 0;
   padding: 0;
 
-  @media (max-width: ${props => props.theme.sm}) {
+  @media (max-width: 576px) {
     flex-direction: column;
     padding: 10px 0;
     display: ${props => (props.isNavShown ? 'flex' : 'none')};
@@ -55,7 +55,7 @@ const NavLink = styled.li`
   font-size: 1rem;
   line-height: 1rem;
 
-  @media (max-width: ${props => props.theme.sm}) {
+  @media (max-width: 576px) {
     padding: 0;
     width: 100%;
   }
@@ -69,11 +69,11 @@ const NavLink = styled.li`
     background: linear-gradient(
       180deg,
       transparent 50%,
-      ${props => props.theme.coolGray11c} 0
+      #53565A 0
     );
     background-size: 0 100%;
 
-    @media (max-width: ${props => props.theme.sm}) {
+    @media (max-width: 576px) {
       padding: 10px 10px 7px;
       display: block;
     }

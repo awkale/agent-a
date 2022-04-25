@@ -4,7 +4,7 @@ const CaseNumber = styled.h4`
   font-size: 1.4rem;
   text-align: center;
   line-height: 1;
-  color: ${props => props.theme.red};
+  color: #d22630;
   position: absolute;
   left: 0;
   right: 0;
@@ -12,7 +12,7 @@ const CaseNumber = styled.h4`
   /* transform: rotate(-25deg); */
   opacity: 0.25;
 
-  @media (max-width: ${props => props.theme.sm}) {
+  @media (max-width: 576px) {
     display: none;
   }
 `;

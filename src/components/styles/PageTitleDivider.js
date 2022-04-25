@@ -17,7 +17,7 @@ const PageTitleDivider = styled.h2`
     left: 0;
     right: 0;
     bottom: 50px;
-    background-color: ${props => props.theme.red};
+    background-color: #d22630;
   }
 
   &:after {
@@ -29,7 +29,7 @@ const PageTitleDivider = styled.h2`
     left: 0;
     right: 0;
     top: 50px;
-    background-color: ${props => props.theme.red};
+    background-color: #d22630;
   }
 `;
 

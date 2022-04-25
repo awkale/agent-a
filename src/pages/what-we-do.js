@@ -12,7 +12,7 @@ const ProcessGrid = styled.div`
   grid-column-gap: 50px;
   grid-row-gap: 50px;
 
-  @media (min-width: ${props => props.theme.md}) {
+  @media (min-width: 768px) {
     grid-row-gap: 250px;
     grid-template-columns: 1fr 1fr;
   }

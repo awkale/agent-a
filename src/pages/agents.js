@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import Helmut from 'react-helmet';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
-import PageTitle from '../components/styles/PageTitle';
-import PageSubTitle from '../components/styles/PageSubTitle';
-import BoxWrapper from '../components/styles/BoxWrapper';
+import React from 'react'
+import styled from 'styled-components'
+import Helmut from 'react-helmet'
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import PageTitle from '../components/styles/PageTitle'
+import PageSubTitle from '../components/styles/PageSubTitle'
+import BoxWrapper from '../components/styles/BoxWrapper'
 
 const AgentBox = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const AgentBox = styled.div`
 
   .gatsby-image-wrapper {
     margin-bottom: 45px;
-    border-bottom: 10px solid ${props => props.theme.red};
+    border-bottom: 10px solid #d22630;
   }
 `;
 
@@ -38,10 +38,11 @@ const Agents = ({ data }) => (
     <BoxWrapper>
       {data.allContentfulAgents.edges.map(agent => (
         <AgentBox key={agent.node.id}>
-          <Img fluid={agent.node.headshot.fluid} />
+          <GatsbyImage image={agent.node.headshot.gatsbyImageData} />
           <AgentText>
             <PageSubTitle>
-              {`${agent.node.firstName} ${agent.node.lastName}`}<br />
+              {`${agent.node.firstName} ${agent.node.lastName}`}
+              <br />
               <small>{agent.node.title}</small>
             </PageSubTitle>
 
@@ -51,7 +52,7 @@ const Agents = ({ data }) => (
       ))}
     </BoxWrapper>
   </Layout>
-);
+)
 
 export const query = graphql`
   query AgentPhotosQuery {
@@ -73,14 +74,12 @@ export const query = graphql`
           }
           title
           headshot {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData
           }
         }
       }
     }
   }
-`;
+`
 
-export default Agents;
+export default Agents
