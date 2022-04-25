@@ -1,0 +1,49 @@
+.Typist .Cursor {
+  display: inline-block;
+  font-size: 2rem;
+  color: #fff;
+
+  &--blinking {
+    opacity: 1;
+    animation: blink 1s linear infinite;
+    @keyframes blink {
+      0% { opacity:1; }
+      50% { opacity:0; }
+      100% { opacity:1; }
+    }
+  }
+}
+
+.typist-wrapper {
+  padding: 20px;
+  width: 80%;
+}
+
+.typist-heading {
+  color: #fff;
+  display: inline-block;
+  line-height: 1.1;
+  font-weight: 300;
+}
+
+h1.typist-heading {
+  font-size: 5rem;
+  letter-spacing: -2px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+
+  @media (max-width: 576px) {
+    font-size: 3rem;
+  }
+}
+
+h2.typist-heading {
+  font-family: 'Univers LT Std 45 Light';
+  font-size: 3rem;
+  letter-spacing: -1px;
+
+  @media (max-width: 576px) {
+    font-size: 1.5rem;
+  }
+}
+
