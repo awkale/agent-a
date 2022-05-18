@@ -7,10 +7,12 @@ import '../styles/nav.css'
 const Navbar = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 5rem;
   @media (max-width: 576px) {
     flex-direction: column;
     margin-bottom: 1rem;
+    align-items: flex-start;
   }
 `;
 
@@ -42,9 +44,13 @@ const NavLinkWrapper = styled.ul`
   display: flex;
   align-items: center;
   margin-bottom: 0;
+
   padding: 0;
+  height: 24px;
+  overflow: hidden;
 
   @media (max-width: 576px) {
+    height: auto;
     flex-direction: column;
     padding: 10px 0;
     display: ${props => (props.isNavShown ? 'flex' : 'none')};
