@@ -1,0 +1,30 @@
+@import "./fonts.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./typography.css";
+
+html, body {
+  height: 100vh;
+  color: #f8f9fa;
+}
+body {
+  background-color: #212529;
+}
+
+
+p::selection {
+  background: theme('colors.red');
+}
+
+header,
+main,
+footer {
+  position: relative;
+}
+main {
+  min-height: 600px;
+}
+footer {
+  margin: 20px 0;
+}

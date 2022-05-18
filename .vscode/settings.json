@@ -1,12 +1,28 @@
 {
-    "files.associations": {
-      "*.js": "javascriptreact"
-    },
-    "emmet.includeLanguages": {
-      "javascript": "javascriptreact"
-    },
-      "workbench.colorCustomizations": {
-        "titleBar.activeBackground": "#ff0000",
-        "titleBar.inactiveBackground": "#ff0000CC"
-      }
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#ff0000",
+    "titleBar.inactiveBackground": "#ff0000CC"
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "prettier.semi": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
+}

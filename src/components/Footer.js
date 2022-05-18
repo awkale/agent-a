@@ -24,19 +24,19 @@ const FooterNavLink = styled.li`
     color: #fff;
 
     &:hover {
-      color: ${props => props.theme.coolGray11c};
+      color: #53565A;
     }
   }
 `;
 
 const Copyright = styled.div`
-  color: ${props => props.theme.coolGray11c};
+  color: #53565A;
   text-align: right;
 `;
 
 function Footer() {
   return (
-    <footer>
+    <footer className="px-4">
       <FooterNav>
         <FooterNavLink>
           <OutboundLink href="mailto:alex@agent-a-ny.com">
@@ -59,15 +59,6 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon size="lg" icon={faLinkedin} />
-          </OutboundLink>
-        </FooterNavLink>
-        <FooterNavLink>
-          <OutboundLink
-            href="https://twitter.com/agentabranding"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon size="lg" icon={faTwitter} />
           </OutboundLink>
         </FooterNavLink>
       </FooterNav>

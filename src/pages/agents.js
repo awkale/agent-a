@@ -1,13 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import Helmut from 'react-helmet';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
-import PageTitle from '../components/styles/PageTitle';
-import PageSubTitle from '../components/styles/PageSubTitle';
-import BoxWrapper from '../components/styles/BoxWrapper';
+import { graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import React from 'react'
+import Helmut from 'react-helmet'
+import styled from 'styled-components'
+import Layout from '../components/Layout'
+import SEO from '../components/Seo'
+import BoxWrapper from '../components/styles/BoxWrapper'
+import PageSubTitle from '../components/styles/PageSubTitle'
 
 const AgentBox = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ const AgentBox = styled.div`
 
   .gatsby-image-wrapper {
     margin-bottom: 45px;
-    border-bottom: 10px solid ${props => props.theme.red};
+    border-bottom: 10px solid #d22630;
   }
 `;
 
@@ -34,14 +33,15 @@ const Agents = ({ data }) => (
       description={data.site.siteMetadata.description}
       keywords={data.site.siteMetadata.keywords}
     />
-    <PageTitle>Agents</PageTitle>
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">Agents</h1>
     <BoxWrapper>
       {data.allContentfulAgents.edges.map(agent => (
         <AgentBox key={agent.node.id}>
-          <Img fluid={agent.node.headshot.fluid} />
+          <GatsbyImage image={agent.node.headshot.gatsbyImageData} />
           <AgentText>
             <PageSubTitle>
-              {`${agent.node.firstName} ${agent.node.lastName}`}<br />
+              {`${agent.node.firstName} ${agent.node.lastName}`}
+              <br />
               <small>{agent.node.title}</small>
             </PageSubTitle>
 
@@ -51,7 +51,7 @@ const Agents = ({ data }) => (
       ))}
     </BoxWrapper>
   </Layout>
-);
+)
 
 export const query = graphql`
   query AgentPhotosQuery {
@@ -73,14 +73,12 @@ export const query = graphql`
           }
           title
           headshot {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
+            gatsbyImageData
           }
         }
       }
     }
   }
-`;
+`
 
-export default Agents;
+export default Agents

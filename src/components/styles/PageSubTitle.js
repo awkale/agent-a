@@ -12,12 +12,12 @@ const PageSubTitle = styled.h2`
     width: 45px;
     height: 5px;
     margin-top: 20px;
-    background-color: ${props => props.theme.red};
+    background-color: #d22630;
   }
 
   small {
     font-size: 1rem;
-    color: ${props => props.theme.red};
+    color: #d22630;
   }
 `;
 
