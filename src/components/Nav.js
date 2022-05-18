@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import logo from '../images/AgentA-white.png';
+import '../styles/nav.css'
 
 const Navbar = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ const Navbar = styled.div`
   margin-bottom: 5rem;
   @media (max-width: 576px) {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -50,10 +52,9 @@ const NavLinkWrapper = styled.ul`
 `;
 
 const NavLink = styled.li`
-  font-family: noway_roundregular;
+  font-family: n27regular;
   letter-spacing: 1px;
   font-size: 1rem;
-  line-height: 1rem;
 
   @media (max-width: 576px) {
     padding: 0;
@@ -61,29 +62,16 @@ const NavLink = styled.li`
   }
 
   a {
-    color: #fff;
     text-transform: uppercase;
-    padding: 2px 15px;
+    padding: 4px 15px 2px;
     margin-left: 30px;
-    transition: all 0.2s ease;
-    background: linear-gradient(
-      180deg,
-      transparent 50%,
-      #53565A 0
-    );
-    background-size: 0 100%;
 
     @media (max-width: 576px) {
       padding: 10px 10px 7px;
+      margin-left: 10px;
       display: block;
     }
 
-    :hover,
-    &.active {
-      color: #fff;
-      text-decoration: none;
-      background-size: 100% 100%;
-    }
   }
 `;
 
@@ -124,17 +112,17 @@ class Nav extends Component {
         </ToggleButton>
         <NavLinkWrapper isNavShown={this.state.hamburgerIsOpen}>
           <NavLink>
-            <Link activeClassName="active" to="/what-we-do">
+            <Link className="nav-hover" activeClassName="active" to="/what-we-do">
               What We Do
             </Link>
           </NavLink>
           <NavLink>
-            <Link activeClassName="active" to="/work">
+            <Link className="nav-hover" activeClassName="active" to="/work">
               Work
             </Link>
           </NavLink>
           <NavLink>
-            <Link activeClassName="active" to="/agents">
+            <Link className="nav-hover" activeClassName="active" to="/agents">
               The Agents
             </Link>
           </NavLink>
