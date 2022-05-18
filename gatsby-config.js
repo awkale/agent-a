@@ -3,7 +3,7 @@ let contentfulConfig;
 try {
   // Load the Contentful config from the .contentful.json
   contentfulConfig = require('./.contentful');
-} catch (_) {}
+} catch (_) { }
 
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
@@ -100,7 +100,6 @@ module.exports = {
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
