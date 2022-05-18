@@ -36,7 +36,7 @@ const Copyright = styled.div`
 
 function Footer() {
   return (
-    <footer>
+    <footer className="px-4">
       <FooterNav>
         <FooterNavLink>
           <OutboundLink href="mailto:alex@agent-a-ny.com">
@@ -59,15 +59,6 @@ function Footer() {
             rel="noopener noreferrer"
           >
             <FontAwesomeIcon size="lg" icon={faLinkedin} />
-          </OutboundLink>
-        </FooterNavLink>
-        <FooterNavLink>
-          <OutboundLink
-            href="https://twitter.com/agentabranding"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon size="lg" icon={faTwitter} />
           </OutboundLink>
         </FooterNavLink>
       </FooterNav>
