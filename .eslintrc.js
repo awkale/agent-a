@@ -1,4 +1,4 @@
-module.exports = exports = {
+module.exports = {
   env: {
     browser: true,
     es2021: true,
@@ -11,6 +11,7 @@ module.exports = exports = {
     'prettier',
     'prettier/prettier',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -37,6 +38,7 @@ module.exports = exports = {
         js: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': ['error', { peerDependencies: true }],
     'max-len': [
       'warn',
       {
@@ -59,11 +61,17 @@ module.exports = exports = {
     'no-use-before-define': 'off',
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
-    'react/jsx-filename-extension': ['warn', { extensions: ['.tsx'] }],
-    'react/jsx-props-no-spreading': 'warn',
+    'react/jsx-filename-extension': [
+      'warn',
+      {
+        extensions: ['.tsx'],
+      },
+    ],
+    'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
     'react/require-default-props': 'off',
     'react/no-array-index-key': 'warn',
+    'react/function-component-definition': 'off',
     camelcase: 'warn',
     'import/named': 'warn',
   },
@@ -81,8 +89,8 @@ module.exports = exports = {
       typescript: {},
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        moduleDirectory: ['node_modules', 'frontend/'],
+        moduleDirectory: ['node_modules', 'src'],
       },
     },
   },
-};
+}
