@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({
- description, lang, meta, keywords, title 
+  bodyAttributes, description, lang, meta, keywords, title
 }) {
   const { site } = useStaticQuery(
     graphql`
@@ -31,6 +31,7 @@ function SEO({
 
   return (
     <Helmet
+      bodyAttributes={bodyAttributes}
       htmlAttributes={{
         lang,
       }}
@@ -90,6 +91,7 @@ SEO.defaultProps = {
 };
 
 SEO.propTypes = {
+  bodyAttributes: PropTypes.object,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
