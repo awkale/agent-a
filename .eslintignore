@@ -1,0 +1,9 @@
+vendor/exports.js
+integration-tests/node_modules/**
+node_modules/**
+dist/**
+node-scripts/**
+coverage/**
+*.css
+*.svg
+!/.storybook
