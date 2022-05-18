@@ -105,7 +105,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['noway_roundregular', 'noway_rounditalic'],
+          families: ['n27regular'],
         },
       },
     },
