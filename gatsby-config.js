@@ -94,7 +94,6 @@ module.exports = {
         name: 'Agent A',
         short_name: 'Agent A',
         start_url: '/',
-        background_color: '#d22630',
         theme_color: '#d22630',
         display: 'minimal-ui',
         icon: 'src/images/favicon.png', // This path is relative to the root of the site.

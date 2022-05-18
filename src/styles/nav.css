@@ -4,7 +4,7 @@
 
     line-height: var(--h);
     color: #0000;
-    overflow: clip;
+    overflow: hidden;
     text-shadow:
       0 var(--_i,var(--h)) #fff,
       0 0 rgb(255 255 255 / calc(var(--_i, 1) * 100%) );
