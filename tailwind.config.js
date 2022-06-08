@@ -5,9 +5,9 @@ module.exports = {
   theme: {
 
     fontFamily: {
-      'sans': ['n27regular', 'sans-serif'],
-      'display': ['n27regular', 'sans-serif'],
-      'body': ['n27regular', 'sans-serif'],
+      'sans': ['Univers', 'sans-serif'],
+      'display': ['Univers', 'sans-serif'],
+      'body': ['Univers', 'sans-serif'],
     },
     extend: {
       colors: {
