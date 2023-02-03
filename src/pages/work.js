@@ -46,7 +46,7 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulWork {
+    allContentfulWork(sort: {order: ASC}) {
       edges {
         node {
           clientName

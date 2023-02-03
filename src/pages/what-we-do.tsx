@@ -60,7 +60,7 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulProcess(sort: { fields: [order] }) {
+    allContentfulProcess(sort: { order: ASC }) {
       edges {
         node {
           id
