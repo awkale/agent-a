@@ -62,7 +62,7 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulAgents(sort: { fields: [order] }) {
+    allContentfulAgents(sort: {order: ASC}) {
       edges {
         node {
           id
