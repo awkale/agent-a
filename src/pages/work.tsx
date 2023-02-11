@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
 import Helmut from 'react-helmet'
@@ -10,7 +10,7 @@ import ImageGrid from '../components/styles/ImageGrid'
 import PageSubTitle from '../components/styles/PageSubTitle'
 import PageTitleDivider from '../components/styles/PageTitleDivider'
 
-const Work = ({ data }) => (
+const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
   <Layout>
     <Helmut bodyAttributes={{ class: 'work' }} />
     <SEO
@@ -18,11 +18,15 @@ const Work = ({ data }) => (
       description={data.site.siteMetadata.description}
       keywords={data.site.siteMetadata.keywords}
     />
-    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">Missions Accomplished</h1>
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
+      Missions Accomplished
+    </h1>
     <BoxWrapper>
-      {data.allContentfulWork.edges.map(work => (
+      {data.allContentfulWork.edges.map((work) => (
         <div className="p-5">
-          <h3 className="text-xs text-red uppercase mb-5">{work.node.category.category}</h3>
+          <h3 className="text-xs text-red uppercase mb-5">
+            {work.node.category.category}
+          </h3>
           <PageSubTitle>{work.node.clientName}</PageSubTitle>
           <p className="text-xl">{work.node.description.description}</p>
         </div>
@@ -30,15 +34,18 @@ const Work = ({ data }) => (
     </BoxWrapper>
     <PageTitleDivider>Brands we've helped</PageTitleDivider>
     <ImageGrid>
-      {data.allFile.edges.map(image => (
-        <GatsbyImage key={image.node.id} image={image.node.childImageSharp.gatsbyImageData} />
+      {data.allFile.edges.map((image) => (
+        <GatsbyImage
+          key={image.node.id}
+          image={image.node.childImageSharp.gatsbyImageData}
+        />
       ))}
     </ImageGrid>
   </Layout>
 )
 
 export const query = graphql`
-  query WorkQuery {
+  query WorkPage {
     site {
       siteMetadata {
         title
@@ -46,7 +53,7 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulWork(sort: {order: ASC}) {
+    allContentfulWork(sort: { order: ASC }) {
       edges {
         node {
           clientName
