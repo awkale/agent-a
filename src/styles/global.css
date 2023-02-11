@@ -2,7 +2,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import "./typography.css";
 
 html, body {
   height: 100vh;
