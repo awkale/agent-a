@@ -5,8 +5,6 @@ import Helmut from 'react-helmet'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import SEO from '../components/Seo'
-import BoxWrapper from '../components/styles/BoxWrapper'
-import PageSubTitle from '../components/styles/PageSubTitle'
 
 const AgentBox = styled.div`
   display: flex;
@@ -34,22 +32,22 @@ const Agents = ({ data }) => (
       keywords={data.site.siteMetadata.keywords}
     />
     <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">Agents</h1>
-    <BoxWrapper>
+    <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr]">
       {data.allContentfulAgents.edges.map(agent => (
         <AgentBox key={agent.node.id}>
           <GatsbyImage image={agent.node.headshot.gatsbyImageData} />
           <AgentText>
-            <PageSubTitle>
+            <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
               {`${agent.node.firstName} ${agent.node.lastName}`}
               <br />
               <small>{agent.node.title}</small>
-            </PageSubTitle>
+            </h2>
 
             <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
           </AgentText>
         </AgentBox>
       ))}
-    </BoxWrapper>
+    </div>
   </Layout>
 )
 
