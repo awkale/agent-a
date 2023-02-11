@@ -37,6 +37,7 @@ module.exports = {
     ],
     siteUrl: 'https://www.agent-a-ny.com',
   },
+  graphqlTypegen: true,
   plugins: [
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
