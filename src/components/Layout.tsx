@@ -1,9 +1,8 @@
 import { graphql, StaticQuery } from 'gatsby'
-import React from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import * as React from 'react'
+import { Footer, Header } from '../components'
 
-const Layout = ({ children }) => (
+export const Layout = ({ children }: { children: React.ReactNode }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -16,12 +15,10 @@ const Layout = ({ children }) => (
     `}
     render={(data) => (
       <div className="container mx-auto">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <main className="px-4">{children}</main>
         <Footer />
       </div>
     )}
   />
 )
-
-export default Layout
