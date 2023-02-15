@@ -35,7 +35,9 @@ module.exports = {
       'consumer insights',
       'strategy',
     ],
+    image: '/img/AgentA-red.png',
     siteUrl: 'https://www.agent-a-ny.com',
+    twitterUsername: '@agent_a_ny'
   },
   graphqlTypegen: true,
   plugins: [
