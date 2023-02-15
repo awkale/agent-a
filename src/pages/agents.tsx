@@ -1,10 +1,9 @@
-import { graphql } from 'gatsby'
+import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
-import Helmut from 'react-helmet'
 import styled from 'styled-components'
+import { SEO } from '../components'
 import Layout from '../components/Layout'
-import SEO from '../components/Seo'
 
 const AgentBox = styled.div`
   display: flex;
@@ -14,26 +13,22 @@ const AgentBox = styled.div`
     margin-bottom: 45px;
     border-bottom: 10px solid #d22630;
   }
-`;
+`
 
 const AgentText = styled.div`
   p {
     font-size: 1.2rem;
     line-height: 1.5;
   }
-`;
+`
 
-const Agents = ({ data }) => (
+const AgentsPage = ({ data }: PageProps<Queries.AgentsPageQuery>) => (
   <Layout>
-    <Helmut bodyAttributes={{ class: 'agents' }} />
-    <SEO
-      title="Agents"
-      description={data.site.siteMetadata.description}
-      keywords={data.site.siteMetadata.keywords}
-    />
-    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">Agents</h1>
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
+      Agents
+    </h1>
     <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr]">
-      {data.allContentfulAgents.edges.map(agent => (
+      {data.allContentfulAgents.edges.map((agent) => (
         <AgentBox key={agent.node.id}>
           <GatsbyImage image={agent.node.headshot.gatsbyImageData} />
           <AgentText>
@@ -52,7 +47,7 @@ const Agents = ({ data }) => (
 )
 
 export const query = graphql`
-  query AgentPhotosQuery {
+  query AgentsPage {
     site {
       siteMetadata {
         title
@@ -60,7 +55,7 @@ export const query = graphql`
         keywords
       }
     }
-    allContentfulAgents(sort: {order: ASC}) {
+    allContentfulAgents(sort: { order: ASC }) {
       edges {
         node {
           id
@@ -79,4 +74,11 @@ export const query = graphql`
   }
 `
 
-export default Agents
+export default AgentsPage
+
+export const Head = ({}: HeadProps<SeoProps>) => (
+  <>
+    <body className="agents" />
+    <SEO title="Agents" />
+  </>
+)
