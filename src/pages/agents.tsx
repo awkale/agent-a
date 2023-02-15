@@ -1,26 +1,10 @@
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
-import styled from 'styled-components'
-import { SEO, Layout } from '../components'
+import { Layout, SEO } from '../components'
 import { SeoProps } from '../types'
 
-const AgentBox = styled.div`
-  display: flex;
-  flex-direction: column;
 
-  .gatsby-image-wrapper {
-    margin-bottom: 45px;
-    border-bottom: 10px solid #d22630;
-  }
-`
-
-const AgentText = styled.div`
-  p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-`
 
 const AgentsPage = ({ data }: PageProps<Queries.AgentsPageQuery>) => (
   <Layout>
@@ -29,18 +13,18 @@ const AgentsPage = ({ data }: PageProps<Queries.AgentsPageQuery>) => (
     </h1>
     <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr]">
       {data.allContentfulAgents.edges.map((agent) => (
-        <AgentBox key={agent.node.id}>
-          <GatsbyImage image={agent.node.headshot.gatsbyImageData} />
-          <AgentText>
+        <div className="flex flex-col" key={agent.node.id}>
+          <GatsbyImage className="mb-12 border-solid border-b-8 border-b-red" image={agent.node.headshot?.gatsbyImageData} />
+          <div>
             <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
               {`${agent.node.firstName} ${agent.node.lastName}`}
               <br />
               <small>{agent.node.title}</small>
             </h2>
 
-            <p>{agent.node.childContentfulAgentsBioTextNode.bio}</p>
-          </AgentText>
-        </AgentBox>
+            <p className="text-lg leading-normal" >{agent.node.childContentfulAgentsBioTextNode?.bio}</p>
+          </div>
+        </div>
       ))}
     </div>
   </Layout>
@@ -76,7 +60,7 @@ export const query = graphql`
 
 export default AgentsPage
 
-export function Head({}: HeadProps<SeoProps>) {
+export function Head({ }: HeadProps<SeoProps>) {
   return (
     <>
       <body className="agents" />
