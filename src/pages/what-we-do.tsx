@@ -1,7 +1,6 @@
 import { graphql, PageProps, HeadProps } from 'gatsby'
 import React, { Fragment } from 'react'
-import Layout from '../components/Layout'
-import { SEO } from '../components'
+import { SEO, Layout } from '../components'
 import { SeoProps } from '../types'
 
 const ProcessPage = ({ data }: PageProps<Queries.ProcessPageQuery>) => {
