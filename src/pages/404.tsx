@@ -1,7 +1,6 @@
 import { HeadProps, Link, PageProps } from 'gatsby'
-import React from 'react'
-import { SEO } from '../components'
-import Layout from '../components/Layout'
+import * as React from 'react'
+import { SEO, Layout } from '../components'
 import { SeoProps } from '../types'
 
 const NotFoundPage = (props: PageProps) => (
