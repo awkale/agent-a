@@ -1,27 +1,20 @@
 import 'animate.css'
 import { graphql, HeadProps, PageProps } from 'gatsby'
-import React from 'react'
-import Layout from '../components/Layout'
-import { SEO } from '../components'
+import * as React from 'react'
+import { SEO, Layout } from '../components'
 import '../styles/home.css'
 import { SeoProps } from '../types'
 
 function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <Layout>
-      <div className="home-wrapper">
-        <h1 className="home-heading animate__animated animate__faster animate__fadeInUp animate__delay-4s">
+      <div className="grid grid-cols-12 grid-rows-6 ">
+        <h1 className="text-white leading-tight text-5xl">
           We’re a multi-disciplinary brand innovation team
         </h1>
-        <h2 className="home-heading value-1 animate__animated animate__faster animate__fadeInUp animate__delay-1s">
-          Truth
-        </h2>
-        <h2 className="home-heading value-2 animate__animated animate__faster animate__fadeInUp animate__delay-2s">
-          Ideas
-        </h2>
-        <h2 className="home-heading value-3 animate__animated animate__faster animate__fadeInUp animate__delay-3s">
-          Courage
-        </h2>
+        <h2 className="text-white leading-tight text-7xl">Truth</h2>
+        <h2 className="text-white leading-tight text-7xl">Ideas</h2>
+        <h2 className="text-white leading-tight text-7xl">Courage</h2>
       </div>
     </Layout>
   )
