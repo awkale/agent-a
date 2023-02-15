@@ -9,6 +9,7 @@ module.exports = {
       'sans': ['Univers', 'sans-serif'],
       'display': ['Univers', 'sans-serif'],
       'body': ['Univers', 'sans-serif'],
+      'brand': ['n27regular']
     },
     extend: {
       colors: {
