@@ -23,8 +23,7 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Agent A',
-    description:
-      'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
+    description: 'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
     author: '@agentabranding',
     keywords: [
       'Agent A',
