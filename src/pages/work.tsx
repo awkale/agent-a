@@ -1,9 +1,8 @@
 /* eslint-disable max-len */
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import React from 'react'
-import { SEO } from '../components'
-import Layout from '../components/Layout'
+import * as React from 'react'
+import { Layout, SEO } from '../components'
 import { SeoProps } from '../types'
 
 const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
