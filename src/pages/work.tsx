@@ -1,19 +1,13 @@
 /* eslint-disable max-len */
-import { graphql, PageProps } from 'gatsby'
+import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
-import Helmut from 'react-helmet'
+import { SEO } from '../components'
 import Layout from '../components/Layout'
-import SEO from '../components/Seo'
+import { SeoProps } from '../types'
 
 const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
   <Layout>
-    <Helmut bodyAttributes={{ class: 'work' }} />
-    <SEO
-      title="Work"
-      description={data.site.siteMetadata.description}
-      keywords={data.site.siteMetadata.keywords}
-    />
     <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
       Missions Accomplished
     </h1>
@@ -82,4 +76,11 @@ export const query = graphql`
   }
 `
 
-export default Work
+export default WorkPage
+
+export const Head = ({}: HeadProps<SeoProps>) => (
+  <>
+    <body className="work" />
+    <SEO title="Work" />
+  </>
+)
