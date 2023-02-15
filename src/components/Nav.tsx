@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import logo from '../images/AgentA-white.png'
+import logo from '../images/AgentA-red-transparent.png'
 import '../styles/nav.css'
 
 const Navbar = styled.div`
