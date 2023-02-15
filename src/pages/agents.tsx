@@ -1,9 +1,8 @@
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
-import { SEO } from '../components'
-import Layout from '../components/Layout'
+import { SEO, Layout } from '../components'
 import { SeoProps } from '../types'
 
 const AgentBox = styled.div`
