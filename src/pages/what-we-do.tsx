@@ -1,17 +1,12 @@
-import { graphql, PageProps } from 'gatsby'
+import { graphql, PageProps, HeadProps } from 'gatsby'
 import React, { Fragment } from 'react'
 import Layout from '../components/Layout'
-import SEO from '../components/Seo'
+import { SEO } from '../components'
+import { SeoProps } from '../types'
 
 const ProcessPage = ({ data }: PageProps<Queries.ProcessPageQuery>) => {
   return (
     <Layout>
-      <SEO
-        bodyAttributes={{ class: 'what-we-do' }}
-        title="What We Do"
-        description={data.site?.siteMetadata?.description}
-        keywords={data.site?.siteMetadata?.keywords}
-      />
       <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
         Global research. <br />
         Brand Strategy. <br />
@@ -59,3 +54,10 @@ export const query = graphql`
     }
   }
 `
+
+export const Head = ({}: HeadProps<SeoProps>) => (
+  <>
+    <body className="what-we-do" />
+    <SEO title="What We Do" />
+  </>
+)
