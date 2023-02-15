@@ -41,9 +41,11 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = ({}: HeadProps<SeoProps>) => (
-  <>
-    <body className="home" />
-    <SEO />
-  </>
-)
+export function Head({}: HeadProps<SeoProps>) {
+  return (
+    <>
+      <body className="home" />
+      <SEO />
+    </>
+  )
+}

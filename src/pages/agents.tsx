@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { SEO } from '../components'
 import Layout from '../components/Layout'
+import { SeoProps } from '../types'
 
 const AgentBox = styled.div`
   display: flex;
@@ -76,9 +77,11 @@ export const query = graphql`
 
 export default AgentsPage
 
-export const Head = ({}: HeadProps<SeoProps>) => (
-  <>
-    <body className="agents" />
-    <SEO title="Agents" />
-  </>
-)
+export function Head({}: HeadProps<SeoProps>) {
+  return (
+    <>
+      <body className="agents" />
+      <SEO title="Agents" />
+    </>
+  )
+}

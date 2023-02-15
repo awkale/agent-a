@@ -78,9 +78,11 @@ export const query = graphql`
 
 export default WorkPage
 
-export const Head = ({}: HeadProps<SeoProps>) => (
-  <>
-    <body className="work" />
-    <SEO title="Work" />
-  </>
-)
+export function Head({}: HeadProps<SeoProps>) {
+  return (
+    <>
+      <body className="work" />
+      <SEO title="Work" />
+    </>
+  )
+}

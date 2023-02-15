@@ -22,9 +22,11 @@ const NotFoundPage = (props: PageProps) => (
 
 export default NotFoundPage
 
-export const Head = ({}: HeadProps<SeoProps>) => (
-  <>
-    <body className="not-found" />
-    <SEO title="404: Not found" />
-  </>
-)
+export function Head({}: HeadProps<SeoProps>) {
+  return (
+    <>
+      <body className="not-found" />
+      <SEO title="404: Not found" />
+    </>
+  )
+}

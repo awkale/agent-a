@@ -55,9 +55,11 @@ export const query = graphql`
   }
 `
 
-export const Head = ({}: HeadProps<SeoProps>) => (
-  <>
-    <body className="what-we-do" />
-    <SEO title="What We Do" />
-  </>
-)
+export function Head({}: HeadProps<SeoProps>) {
+  return (
+    <>
+      <body className="what-we-do" />
+      <SEO title="What We Do" />
+    </>
+  )
+}
