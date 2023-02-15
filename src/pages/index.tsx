@@ -1,19 +1,14 @@
 import 'animate.css'
-import { graphql } from 'gatsby'
+import { graphql, HeadProps, PageProps } from 'gatsby'
 import React from 'react'
 import Layout from '../components/Layout'
-import SEO from '../components/Seo'
+import { SEO } from '../components'
 import '../styles/home.css'
+import { SeoProps } from '../types'
 
-function IndexPage({ data }) {
+function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <Layout>
-      <SEO
-        bodyAttributes={{ class: 'home' }}
-        title={data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
-        keywords={data.site.siteMetadata.keywords}
-      />
       <div className="home-wrapper">
         <h1 className="home-heading animate__animated animate__faster animate__fadeInUp animate__delay-4s">
           We’re a multi-disciplinary brand innovation team
@@ -45,3 +40,10 @@ export const query = graphql`
 `
 
 export default IndexPage
+
+export const Head = ({}: HeadProps<SeoProps>) => (
+  <>
+    <body className="home" />
+    <SEO />
+  </>
+)
