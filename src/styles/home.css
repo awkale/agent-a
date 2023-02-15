@@ -1,12 +1,5 @@
-.home-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(6, 1fr);
-}
-
-.home-heading {
-  color: #fff;
-  line-height: 1.1;
+.home {
+background: #f8f9fa;
 }
 
 h1.home-heading {
