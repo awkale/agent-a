@@ -14,9 +14,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       }
     `}
     render={(data) => (
-      <div className="container mx-auto">
+      <div>
         <Header />
-        <main className="px-4">{children}</main>
+        <div className="container mx-auto">
+          <main className="pt-24">{children}</main>
+        </div>
         <Footer />
       </div>
     )}
