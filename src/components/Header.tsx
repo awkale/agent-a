@@ -1,10 +1,10 @@
 import * as React from 'react'
-import Nav from './Nav'
+import { Nav } from '../components'
 
-export const Header = ({}) => (
-  <header>
-    <div>
+export function Header() {
+  return (
+    <header className="bg-white fixed inset-x-0 top-0 z-50">
       <Nav />
-    </div>
-  </header>
-)
+    </header>
+  )
+}
