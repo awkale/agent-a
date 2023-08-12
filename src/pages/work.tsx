@@ -1,27 +1,37 @@
 /* eslint-disable max-len */
 import { graphql, HeadProps, PageProps } from 'gatsby'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import React from 'react'
-import { SEO } from '../components'
-import Layout from '../components/Layout'
+import * as React from 'react'
+import { Layout, SEO } from '../components'
 import { SeoProps } from '../types'
 
 const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
   <Layout>
-    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
       Missions Accomplished
     </h1>
-    <div className="grid gap-x-12 gap-y-20 md:grid-cols-3">
+    <div className="grid md:gap-x-8 gap-y-20 grid-cols-12 px-4 md:px-0">
       {data.allContentfulWork.edges.map((work) => (
-        <div className="p-5">
-          <h3 className="text-xs text-red uppercase mb-5">
-            {work.node.category.category}
-          </h3>
-          <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
-            {work.node.clientName}
-          </h2>
-          <p className="text-xl">{work.node.description.description}</p>
-        </div>
+        <>
+          <div className="col-span-12 md:col-span-3">
+            <h3 className="text-xs text-red uppercase mb-5">
+              {work.node.category?.category}
+            </h3>
+            <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
+              {work.node.clientName}
+            </h2>
+            <p className="text-xl">{work.node.description?.description}</p>
+          </div>
+          {work.node.examples && work.node.examples.map((asset) => (
+            <div className="col-span-12 md:col-span-8">
+              <video controls className="w-full h-full">
+                <source src={asset?.url} type="video/mp4" />
+              </video>
+            </div>
+          ))
+
+          }
+        </>
       ))}
     </div>
     <h2 className="text-3xl leading-none text-white mt-48 text-center relative ">
@@ -32,6 +42,7 @@ const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
         <GatsbyImage
           key={image.node.id}
           image={image.node.childImageSharp.gatsbyImageData}
+          alt={image.node.name}
         />
       ))}
     </div>
@@ -57,6 +68,10 @@ export const query = graphql`
           category {
             category
           }
+          examples {
+            url
+            title
+          }
         }
       }
     }
@@ -78,7 +93,7 @@ export const query = graphql`
 
 export default WorkPage
 
-export function Head({}: HeadProps<SeoProps>) {
+export function Head({ }: HeadProps<SeoProps>) {
   return (
     <>
       <body className="work" />

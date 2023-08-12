@@ -13,6 +13,7 @@
       bottom/100% calc(100% - var(--_i,1)*100%) no-repeat;
     transition: 0.3s;
   }
+
   .nav-hover:hover, .nav-hover.active {
     --_i: 0;
   }

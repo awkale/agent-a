@@ -7,6 +7,7 @@ html, body {
   height: 100vh;
   color: #f8f9fa;
 }
+
 body {
   background-color: #212529;
 }
@@ -21,9 +22,7 @@ main,
 footer {
   position: relative;
 }
+
 main {
   min-height: 600px;
-}
-footer {
-  margin: 20px 0;
 }

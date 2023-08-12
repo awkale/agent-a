@@ -1,21 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Nav from './Nav';
+import * as React from 'react'
+import { Nav } from '../components'
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div>
+export function Header() {
+  return (
+    <header className="bg-white fixed inset-x-0 top-0 z-50">
       <Nav />
-    </div>
-  </header>
-);
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: '',
-};
-
-export default Header;
+    </header>
+  )
+}
