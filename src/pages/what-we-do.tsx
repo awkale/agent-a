@@ -6,13 +6,13 @@ import { SeoProps } from '../types'
 const ProcessPage = ({ data }: PageProps<Queries.ProcessPageQuery>) => {
   return (
     <Layout>
-      <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
+      <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
         Global research. <br />
         Brand Strategy. <br />
         Creative. <br />
         Innovation.
       </h1>
-      <section className="grid gap-5 md:gap-y-24 md:grid-cols-[1fr_2fr]">
+      <section className="grid gap-5 md:gap-y-24 md:grid-cols-[1fr_2fr] px-4 md:px-0">
         {data.allContentfulProcess.edges.map((process) => (
           <Fragment key={process.node.id}>
             <h2 className="text-red text-4xl md:text-8xl">
@@ -54,7 +54,7 @@ export const query = graphql`
   }
 `
 
-export function Head({}: HeadProps<SeoProps>) {
+export function Head({ }: HeadProps<SeoProps>) {
   return (
     <>
       <body className="what-we-do" />
