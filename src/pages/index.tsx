@@ -8,34 +8,34 @@ import { SeoProps } from '../types'
 function IndexPage({ data }: PageProps<Queries.IndexPageQuery>) {
   return (
     <Layout>
-      <div className="grid grid-cols-12 grid-rows-6 ">
-        <h1 className="col-start-3 col-span-9 row-start-2 text-red leading-tight text-5xl">
+      <div className="grid grid-cols-12 ">
+        <h1 className="col-start-3 col-span-9 row-start-2 text-red leading-tight text-5xl uppercase text-justify">
           Agent A is a Brooklyn-based brand and innovation studio.
         </h1>
-        <h1 className="col-start-3 col-span-9 row-start-4 text-red leading-tight text-5xl">
+        <h1 className="col-start-3 col-span-9 row-start-4 text-red leading-tight text-5xl uppercase text-justify">
           We’re multicultural moderators, researchers, brand strategists,
           creatives & designers working with some of the world’s leading brands.
         </h1>
-        <h1 className="col-start-3 col-span-9 row-start-6 text-red leading-tight text-5xl">
+        <h1 className="col-start-3 col-span-9 row-start-6 text-red leading-tight text-5xl uppercase text-justify">
           We merge consumer & cultural insights with imagination, curiosity and
           a healthy obsession with facts to unlock growth.
         </h1>
-        <h2 className="col-start-1 row-start-1 text-red leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-1 text-red leading-tight text-9xl font-extrabold uppercase">
           Truth
         </h2>
-        <h2 className="col-start-1 row-start-1 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-1 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold uppercase">
           Truth
         </h2>
-        <h2 className="col-start-1 row-start-3 text-red leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-3 text-red leading-tight text-9xl font-extrabold uppercase">
           Ideas
         </h2>
-        <h2 className="col-start-1 row-start-3 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-3 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold uppercase">
           Ideas
         </h2>
-        <h2 className="col-start-1 row-start-5 text-red leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-5 text-red leading-tight text-9xl font-extrabold uppercase">
           Courage
         </h2>
-        <h2 className="col-start-1 row-start-5 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold">
+        <h2 className="col-start-1 row-start-5 translate-y-6 -translate-x-6 text-black leading-tight text-9xl font-extrabold uppercase">
           Courage
         </h2>
       </div>
@@ -57,7 +57,7 @@ export const query = graphql`
 
 export default IndexPage
 
-export function Head({}: HeadProps<SeoProps>) {
+export function Head({ }: HeadProps<SeoProps>) {
   return (
     <>
       <body className="home" />
