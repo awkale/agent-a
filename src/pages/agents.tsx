@@ -8,10 +8,10 @@ import { SeoProps } from '../types'
 
 const AgentsPage = ({ data }: PageProps<Queries.AgentsPageQuery>) => (
   <Layout>
-    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24">
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
       Agents
     </h1>
-    <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr]">
+    <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr] px-4 md:px-0">
       {data.allContentfulAgents.edges.map((agent) => (
         <div className="flex flex-col" key={agent.node.id}>
           <GatsbyImage className="mb-12 border-solid border-b-8 border-b-red" image={agent.node.headshot?.gatsbyImageData} />
