@@ -20,30 +20,20 @@ export function Footer() {
   return (
     <footer className="bg-red pt-10 transition-all ">
       <div className="container mx-auto">
-        <div className="grid grid-cols-4 mb-16">
-          <ul className="list-none flex flex-col pl-0 text-3xl font-brand text-gray-900 col-start-1">
+        <div className="grid grid-cols-12 mb-16">
+          <ul className="list-none col-span-4 md:col-span-3 col-start-3 md:col-start-1 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-900 ">
             <li><Link to="/">Home</Link></li>
             <li><Link to="what-we-do">What We Do</Link></li>
             <li><Link to="work">Work</Link></li>
             <li><Link to="agents">Agents</Link></li>
           </ul>
-          <ul className="list-none flex flex-col pl-0 text-3xl font-brand text-gray-900 col-start-2">
+          <ul className="list-none col-span-4 md:col-span-3 col-start-8 md:col-start-4 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-900 ">
             <li className="mb-2">
               <OutboundLink
                 className=" hover:text-gray-700"
                 href="mailto:alex@agent-a-ny.com"
               >
                 Email <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </OutboundLink>
-            </li>
-            <li className="mb-2">
-              <OutboundLink
-                className=" hover:text-gray-500"
-                href="https://www.instagram.com/agent_a_ny/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </OutboundLink>
             </li>
             <li className="mb-2">
