@@ -18,7 +18,7 @@ module.exports = {
         'coolGray1c': '#d9d9d6',
         'coolGray6c': '#a7a8aa',
         'coolGray11c': '#53565A',
-        'gray900': '#212529',
+        'gray-900': '#212529',
       },
     },
   },
