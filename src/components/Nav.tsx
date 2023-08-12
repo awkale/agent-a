@@ -25,25 +25,25 @@ export function Nav() {
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                  {/* Current: " text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
+                  {/* Current: " text-gray-900", Default: "border-transparent text-gray-500 hover:border-red hover:text-gray-700" */}
                   <Link
                     to="/what-we-do"
-                    activeClassName="border-red"
-                    className="inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium text-gray-900"
+                    activeClassName="border-red text-gray-900"
+                    className="inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-red border-transparent"
                   >
                     What We Do
                   </Link>
                   <Link
                     to="/work"
-                    activeClassName="border-red"
-                    className="inline-flex items-center border-b-4  px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    activeClassName="border-red text-gray-900"
+                    className="inline-flex items-center border-b-4  px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-red border-transparent"
                   >
                     Work
                   </Link>
                   <Link
                     to="/agents"
-                    activeClassName="border-red"
-                    className="inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    activeClassName="border-red text-gray-900"
+                    className="inline-flex items-center border-b-4 px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-red border-transparent"
                   >
                     The Agents
                   </Link>
@@ -65,7 +65,7 @@ export function Nav() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pt-2 pb-3">
-              {/* Current: "bg-indigo-50  text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
+              {/* Current: "bg-indigo-50  text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-red hover:text-gray-700" */}
               <Disclosure.Button
                 as={Link}
                 to="/what-we-do"
@@ -76,14 +76,14 @@ export function Nav() {
               <Disclosure.Button
                 as={Link}
                 to="/work"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-red hover:bg-gray-50 hover:text-gray-700"
               >
                 Work
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
                 to="/agents"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700"
+                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-red hover:bg-gray-50 hover:text-gray-700"
               >
                 The Agents
               </Disclosure.Button>
