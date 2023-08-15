@@ -17,7 +17,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
       <div className='relative'>
         <Header />
         <div className="container mx-auto">
-          <main className="pt-24 mb-10">{children}</main>
+          <main className="pt-24 mb-80">{children}</main>
         </div>
         <Footer />
       </div>
