@@ -23,9 +23,9 @@ export function Footer() {
         <div className="grid grid-cols-12 mb-16">
           <ul className="list-none col-span-4 md:col-span-3 col-start-3 md:col-start-1 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-900 ">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="what-we-do">What We Do</Link></li>
-            <li><Link to="work">Work</Link></li>
-            <li><Link to="agents">Agents</Link></li>
+            <li><Link to="/what-we-do">What We Do</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/agents">Agents</Link></li>
           </ul>
           <ul className="list-none col-span-4 md:col-span-3 col-start-8 md:col-start-4 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-900 ">
             <li className="mb-2">
