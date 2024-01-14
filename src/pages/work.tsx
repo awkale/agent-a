@@ -22,14 +22,26 @@ const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
             </h2>
             <p className="text-xl">{work.node.description?.description}</p>
           </div>
-          {work.node.examples && work.node.examples.map((asset) => (
-            <div className="col-span-12 md:col-span-8">
-              <video controls className="w-full h-full">
-                <source src={asset?.url} type="video/mp4" />
-              </video>
-            </div>
-          ))
+          {work.node.examples && work.node.examples.map((asset) => {
+            if (asset?.mimeType === 'video/quicktime') {
+              return (
+                <div className="col-span-12 md:col-span-8">
+                  <video controls className="w-full h-full">
+                    <source src={asset?.url} type="video/mp4" />
+                  </video>
+                </div>
+              )
+            }
+            if (asset?.mimeType === 'image/jpeg') {
+              return (
+                <div className="col-span-12 md:col-span-4">
+                  <GatsbyImage image={asset?.gatsbyImageData} alt={asset?.title} />
+                </div>
+              )
+            }
 
+          }
+          )
           }
         </>
       ))}
@@ -71,6 +83,8 @@ export const query = graphql`
           examples {
             url
             title
+            mimeType
+            gatsbyImageData
           }
         }
       }
