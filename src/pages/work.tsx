@@ -10,11 +10,11 @@ const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
     <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
       Missions Accomplished
     </h1>
-    <div className="grid md:gap-x-8 gap-y-20 grid-cols-12 px-4 md:px-0">
+    <div className="grid md:gap-6  grid-cols-12 px-4 md:px-0">
       {data.allContentfulWork.edges.map((work) => (
         <>
-          <div className="col-span-12 md:col-span-3">
-            <h3 className="text-xs text-red uppercase mb-5">
+          <div className="col-span-12 md:col-span-4">
+            <h3 className="text-xs text-red uppercase mb-5 mt-10">
               {work.node.category?.category}
             </h3>
             <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
@@ -22,12 +22,12 @@ const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
             </h2>
             <p className="text-xl">{work.node.description?.description}</p>
           </div>
-          {work.node.examples && work.node.examples.map((asset) => {
-            if (asset?.mimeType === 'video/quicktime') {
+          {work.node.examples && work.node.examples.map((asset, i) => {
+            if (asset?.mimeType === 'video/quicktime' || asset?.mimeType === 'video/mp4') {
               return (
-                <div className="col-span-12 md:col-span-8">
+                <div className={`col-span-12  ${i === 0 ? 'col-start-7 col-end-13' : 'md:col-span-6'}`}>
                   <video controls className="w-full h-full">
-                    <source src={asset?.url} type="video/mp4" />
+                    <source src={asset.url} type="video/mp4" />
                   </video>
                 </div>
               )
