@@ -9,12 +9,18 @@ import { SeoProps } from '../types'
 const AgentsPage = ({ data }: PageProps<Queries.AgentsPageQuery>) => (
   <Layout>
     <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
+      Playlist
+    </h1>
+    <div className="px-4 md:px-0">
+      <iframe allow="autoplay *; encrypted-media *;" height="450" width="660" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/agent-a-radio/pl.u-Zmbl3pph0B60xd" ></iframe>
+    </div>
+    <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
       Agents
     </h1>
     <div className="grid gap-x-12 gap-y-20 md:grid-cols-[1fr_1fr_1fr] px-4 md:px-0">
       {data.allContentfulAgents.edges.map((agent) => (
         <div className="flex flex-col" key={agent.node.id}>
-          <GatsbyImage className="mb-12 border-solid border-b-8 border-b-red" image={agent.node.headshot?.gatsbyImageData} />
+          <GatsbyImage className="mb-12 border-solid border-b-8 border-b-red" image={agent.node.headshot?.gatsbyImageData} alt={agent.node.headshot?.title} />
           <div>
             <h2 className="text-4xl leading-none text-white mb-8 after:content-[''] after:block after:w-[45px] after:h-[5px] after:mt-5 after:bg-red">
               {`${agent.node.firstName} ${agent.node.lastName}`}
@@ -51,6 +57,7 @@ export const query = graphql`
           title
           headshot {
             gatsbyImageData
+            title
           }
         }
       }
