@@ -57,7 +57,7 @@ export const query = graphql`
 
 export default IndexPage
 
-export function Head({ }: HeadProps<SeoProps>) {
+export function Head({}: HeadProps<SeoProps>) {
   return (
     <>
       <body className="home" />
