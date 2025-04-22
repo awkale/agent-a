@@ -4,16 +4,17 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import { Layout, SEO } from '../components'
 import { SeoProps } from '../types'
+import { classNames } from '../hooks/classNames'
 
 const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
   <Layout>
     <h1 className="text-white text-5xl md:text-8xl tracking-tight mb-10 md:mb-24 px-4 md:px-0">
       Missions Accomplished
     </h1>
-    <div className="grid md:gap-6  grid-cols-12 px-4 md:px-0">
+    <div className="grid gap-4  md:gap-6  grid-cols-12 px-4 md:px-0">
       {data.allContentfulWork.edges.map((work) => (
         <>
-          <div className="col-span-12 md:col-span-4">
+          <div className={classNames('col-span-12 md:col-span-4')}>
             <h3 className="text-xs text-red uppercase mb-5 mt-10">
               {work.node.category?.category}
             </h3>
@@ -22,27 +23,40 @@ const WorkPage = ({ data }: PageProps<Queries.WorkPageQuery>) => (
             </h2>
             <p className="text-xl">{work.node.description?.description}</p>
           </div>
-          {work.node.examples && work.node.examples.map((asset, i) => {
-            if (asset?.mimeType === 'video/quicktime' || asset?.mimeType === 'video/mp4') {
-              return (
-                <div className={`col-span-12  ${i === 0 ? 'col-start-7 col-end-13' : 'md:col-span-6'}`}>
-                  <video controls className="w-full h-full">
-                    <source src={asset.url} type="video/mp4" />
-                  </video>
-                </div>
-              )
-            }
-            if (asset?.mimeType === 'image/jpeg') {
-              return (
-                <div className="col-span-12 md:col-span-4">
-                  <GatsbyImage image={asset?.gatsbyImageData} alt={asset?.title} />
-                </div>
-              )
-            }
-
-          }
-          )
-          }
+          {work.node.examples &&
+            work.node.examples.map((asset, i) => {
+              if (
+                asset?.mimeType === 'video/quicktime' ||
+                asset?.mimeType === 'video/mp4'
+              ) {
+                return (
+                  <div
+                    className={`col-span-12  ${
+                      i === 0 ? 'col-start-7 col-end-13' : 'md:col-span-6'
+                    }`}
+                  >
+                    <video controls className="w-full h-full">
+                      <source src={asset.url ?? ''} type="video/mp4" />
+                    </video>
+                  </div>
+                )
+              }
+              if (asset?.mimeType === 'image/jpeg' || 'image/png') {
+                return (
+                  <div className="col-span-12 md:col-span-4">
+                    {asset?.gatsbyImageData && (
+                      <GatsbyImage
+                        image={asset.gatsbyImageData}
+                        alt={asset?.title || 'Image'}
+                      />
+                    )}
+                  </div>
+                )
+              }
+            })}
+          {work.node.examples && (
+            <div className="col-span-full my-20 border-red border-t-4"></div>
+          )}
         </>
       ))}
     </div>
@@ -107,7 +121,7 @@ export const query = graphql`
 
 export default WorkPage
 
-export function Head({ }: HeadProps<SeoProps>) {
+export function Head({}: HeadProps<SeoProps>) {
   return (
     <>
       <body className="work" />
