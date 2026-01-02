@@ -35,15 +35,7 @@ export function Footer() {
               <Link to="/agents">Agents</Link>
             </li>
           </ul>
-          <ul className="list-none col-span-4 md:col-span-3 col-start-8 md:col-start-4 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-900 ">
-            <li className="mb-2">
-              <OutboundLink
-                className=" hover:text-gray-700"
-                href="mailto:alex@agent-a-ny.com"
-              >
-                Email <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </OutboundLink>
-            </li>
+          <ul className="list-none col-span-4 md:col-span-3 col-start-8 md:col-start-4 flex flex-col pl-0 text-xl md:text-3xl font-brand text-gray-
             <li className="mb-2">
               <OutboundLink
                 className=" hover:text-gray-500"
