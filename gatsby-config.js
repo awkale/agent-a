@@ -1,29 +1,32 @@
-let contentfulConfig;
+const adapter = require('gatsby-adapter-netlify').default
+
+let contentfulConfig
 
 try {
   // Load the Contentful config from the .contentful.json
-  contentfulConfig = require('./.contentful');
-} catch (_) { }
+  contentfulConfig = require('./.contentful')
+} catch (_) {}
 
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken:
     process.env.CONTENTFUL_ACCESS_TOKEN || contentfulConfig.accessToken,
-};
+}
 
-const { spaceId, accessToken } = contentfulConfig;
+const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    'Contentful spaceId and the delivery token need to be provided.',
-  );
+    'Contentful spaceId and the delivery token need to be provided.'
+  )
 }
 
 module.exports = {
   siteMetadata: {
     title: 'Agent A',
-    description: 'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
+    description:
+      'Agent A is a brand innovation studio. We merge curiosity, insight and imagination to help brands matter. ',
     author: '@agentabranding',
     keywords: [
       'Agent A',
@@ -36,7 +39,7 @@ module.exports = {
     ],
     image: '/img/AgentA-red.png',
     siteUrl: 'https://www.agent-a-ny.com',
-    twitterUsername: '@agent_a_ny'
+    twitterUsername: '@agent_a_ny',
   },
   graphqlTypegen: true,
   plugins: [
@@ -107,4 +110,7 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
   ],
-};
+  adapter: adapter({
+    imageCDN: true,
+  }),
+}
