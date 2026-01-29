@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.16",
     "animate.css": "^4.1.1",
     "gatsby": "^5.16.0",
+    "gatsby-adapter-netlify": "^1.4.0",
     "gatsby-plugin-google-gtag": "^5.16.0",
     "gatsby-plugin-image": "^3.16.0",
     "gatsby-plugin-manifest": "^5.16.0",
